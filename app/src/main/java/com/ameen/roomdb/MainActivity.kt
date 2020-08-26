@@ -1,7 +1,9 @@
 package com.ameen.roomdb
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import io.reactivex.internal.operators.completable.CompletableObserveOn
+import io.reactivex.rxjava3.schedulers.Schedulers
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -10,9 +12,10 @@ class MainActivity : AppCompatActivity() {
 
 
         val postDatabase = PostDatabase.getInstance(this)!!
+
         postDatabase.postDao()?.insertPost(Post(50, "Ameen", "Hello Room"))
-        postDatabase.postDao()?.insertPost(Post(50, "Ameen", "Hello Room"))
-        postDatabase.postDao()?.insertPost(Post(50, "Ameen", "Hello Room"))
+            ?.subscribeOn(Schedulers.computation())
+            ?.subscribe()
 
     }
 }

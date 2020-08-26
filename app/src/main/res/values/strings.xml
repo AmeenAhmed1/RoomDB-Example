@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RoomDB</string>
+    <string name="title">title</string>
+    <string name="body">body</string>
+    <string name="insert">Insert</string>
+    <string name="get">Get</string>
 </resources>
