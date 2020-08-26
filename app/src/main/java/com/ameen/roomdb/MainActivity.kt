@@ -11,5 +11,8 @@ class MainActivity : AppCompatActivity() {
 
         val postDatabase = PostDatabase.getInstance(this)!!
         postDatabase.postDao()?.insertPost(Post(50, "Ameen", "Hello Room"))
+        postDatabase.postDao()?.insertPost(Post(50, "Ameen", "Hello Room"))
+        postDatabase.postDao()?.insertPost(Post(50, "Ameen", "Hello Room"))
+
     }
 }
